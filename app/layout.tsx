@@ -27,6 +27,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <nav className="w-full bg-gray-800 border-b border-gray-700 px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="text-blue-400 text-2xl font-bold flex items-center gap-2">
+              <span className="inline-block"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75v10.5A2.25 2.25 0 006 19.5h12a2.25 2.25 0 002.25-2.25V6.75M3.75 6.75A2.25 2.25 0 016 4.5h12a2.25 2.25 0 012.25 2.25m-16.5 0h16.5m-16.5 0v10.5A2.25 2.25 0 006 19.5h12a2.25 2.25 0 002.25-2.25V6.75m-16.5 0h16.5" /></svg></span>
+              ReadMagic
+            </span>
+          </div>
+          <div className="flex items-center gap-6 text-gray-300 font-medium">
+            <a href="#" className="hover:text-blue-400 transition-colors">How it works</a>
+            <a href="#" className="hover:text-blue-400 transition-colors">Examples</a>
+            <button className="ml-4 px-5 py-1.5 border border-blue-600 text-blue-400 rounded-lg hover:bg-gray-700 transition-colors">Log in</button>
+          </div>
+        </nav>
         {children}
       </body>
     </html>
