@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowRightIcon, ClipboardIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
+import { ClipboardIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 import ReadmePreview from './components/ReadmePreview';
 
 export default function Home() {
@@ -52,7 +52,7 @@ export default function Home() {
     try {
       await navigator.clipboard.writeText(generatedReadme);
       alert('README copied to clipboard!');
-    } catch (err) {
+    } catch {
       alert('Failed to copy to clipboard');
     }
   };

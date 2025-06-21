@@ -1,14 +1,12 @@
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { Components } from 'react-markdown';
 
 interface ReadmePreviewProps {
   content: string;
 }
 
 interface CodeProps {
-  node?: any;
   inline?: boolean;
   className?: string;
   children?: React.ReactNode;
@@ -22,12 +20,12 @@ export default function ReadmePreview({ content }: ReadmePreviewProps) {
     >
       <ReactMarkdown
         components={{
-          code({ node, inline, className, children, ...props }: CodeProps) {
+          code({ inline, className, children, ...props }: CodeProps) {
             const match = /language-(\w+)/.exec(className || '');
             if (!inline && match) {
               return (
                 <SyntaxHighlighter
-                  style={vscDarkPlus as any}
+                  style={vscDarkPlus}
                   language={match[1]}
                   PreTag="div"
                   {...props}
